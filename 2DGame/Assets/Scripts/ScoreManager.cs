@@ -24,4 +24,12 @@ public class ScoreManager : MonoBehaviour {
 		ScoreText.text = " " + Score;
 		
 	}
+
+	public static void AddPoints (int PointsToAdd){
+		Score += PointsToAdd;
+	}
+
+	//public static void Reset() {
+		//score=0;
+	//}
 }
