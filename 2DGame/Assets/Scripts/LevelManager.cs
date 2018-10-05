@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour {
 		Dude = FindObjectOfType<Rigidbody2D> ();
 	}
 	public void RespawnPlayer(){
-		StartCoroutine ("RespawnDudeCo");
+		StartCoroutine ("RespawnPlayerCo");
 	}
 	public IEnumerator RespawnPlayerCo(){
 		//Generate Death Particle
