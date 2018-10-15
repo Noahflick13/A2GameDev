@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour {
+public class P2Levelmanager : MonoBehaviour {
 	public GameObject CurrentCheckPoint;
-	public Rigidbody2D Dude;
+	public Rigidbody2D Guy;
 	//particles
 	public GameObject DeathParticle;
 	public GameObject RespawnParticle;
@@ -27,14 +27,14 @@ public class LevelManager : MonoBehaviour {
 	}
 	public IEnumerator RespawnPlayerCo(){
 		//Generate Death Particle
-		Instantiate (DeathParticle, Dude.transform.position, Dude.transform.rotation);
+		Instantiate (DeathParticle, Guy.transform.position, Guy.transform.rotation);
 		//Hide Dude
 		// PC.enabled = False;
-		Dude.GetComponent<Renderer> ().enabled = false;
+		Guy.GetComponent<Renderer> ().enabled = false;
 		//Gravity Reset
-		GravityStore = Dude.GetComponent<Rigidbody2D>().gravityScale;
-		Dude.GetComponent<Rigidbody2D>().gravityScale = 0f;
-		Dude.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+		GravityStore = Guy.GetComponent<Rigidbody2D>().gravityScale;
+		Guy.GetComponent<Rigidbody2D>().gravityScale = 0f;
+		Guy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		//point Penalty
 		ScoreManager.AddPoints(-PointPenaltyOnDeath);
 		//Debug message
@@ -42,12 +42,12 @@ public class LevelManager : MonoBehaviour {
 		//Respawn Delay
 		yield return new WaitForSeconds (RespawnDelay);
 		//Gravity Restore
-		Dude.GetComponent<Rigidbody2D>().gravityScale = GravityStore;
+		Guy.GetComponent<Rigidbody2D>().gravityScale = GravityStore;
 		//Match Dudes transform position
-		Dude.transform.position = CurrentCheckPoint.transform.position;
+		Guy.transform.position = CurrentCheckPoint.transform.position;
 		//Show dude
 		//dude.enabled = true;
-		Dude.GetComponent<Renderer> ().enabled = true;
+		Guy.GetComponent<Renderer> ().enabled = true;
 		//Spawn Dude
 		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
 	}
