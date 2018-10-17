@@ -38,7 +38,7 @@ public class P2Levelmanager : MonoBehaviour {
 		//point Penalty
 		ScoreManager.AddPoints(-PointPenaltyOnDeath);
 		//Debug message
-		Debug.Log ("Dude Respawn");
+		Debug.Log ("Guy Respawn");
 		//Respawn Delay
 		yield return new WaitForSeconds (RespawnDelay);
 		//Gravity Restore

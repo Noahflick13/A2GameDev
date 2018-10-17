@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillPlayer : MonoBehaviour {
+public class P2Kill : MonoBehaviour {
 
-	public LevelManager LevelManager;
+	public P2Levelmanager P2Levelmanager;
 	
 	// Use this for initialization
 	void Start () {
-		LevelManager = FindObjectOfType<LevelManager>();
+		P2Levelmanager = FindObjectOfType<P2Levelmanager>();
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.name == "Dude") {
-			LevelManager.RespawnPlayer();
+		if(other.name == "Guy") {
+			P2Levelmanager.RespawnPlayer();
 		}
 	}
 }
