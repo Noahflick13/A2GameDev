@@ -12,7 +12,7 @@ public class Shootyboi : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.RightControl))
+		if(Input.GetKeyDown(KeyCode.Return))
 		Instantiate(player2projectile,FirePoint.position, FirePoint.rotation);
 		
 	}
