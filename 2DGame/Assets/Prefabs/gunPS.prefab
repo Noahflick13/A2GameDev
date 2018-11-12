@@ -48,8 +48,8 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160130168621198}
   serializedVersion: 5
-  lengthInSec: 4.25
-  simulationSpeed: 0.66
+  lengthInSec: 1.09
+  simulationSpeed: 0.73
   stopAction: 0
   looping: 0
   prewarm: 0
@@ -120,7 +120,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.21
+      scalar: 0.89
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -173,7 +173,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4.18
+      scalar: 3.98
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -227,7 +227,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.3571005, b: 1, a: 1}
+      maxColor: {r: 0.77449715, g: 0, b: 0.8113208, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -289,7 +289,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.76
+      scalar: 1.14
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -693,7 +693,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 2.77
       mode: 0
       spread: 0
       speed:
@@ -812,7 +812,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 15.14
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3439,10 +3439,10 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -3647,12 +3647,12 @@ ParticleSystem:
       properties: 0
   LightsModule:
     enabled: 0
-    ratio: 0
-    light: {fileID: 0}
+    ratio: 1
+    light: {fileID: 108284617929919980, guid: fe16656e50b4b474984b3d8d60d1ec1b, type: 2}
     randomDistribution: 1
     color: 1
     range: 1
-    intensity: 1
+    intensity: 0
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -3709,7 +3709,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 12.54
       minScalar: 1
       maxCurve:
         serializedVersion: 2
