@@ -5,15 +5,25 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
 	public float Speed;
-	public Rigidbody2D Dude;
+	public float TimeOut;
+	public GameObject Dude;
 	public GameObject EnemyDeath;
 	public GameObject ProjectileParticle;
 	public int PointsForKill;
 
 	// Use this for initialization
 	void Start () {
+		Dude = GameObject.Find("Dude");
+
+		EnemyDeath = Resources.Load("Prefabs/DeathPS") as GameObject;
+
+		ProjectileParticle = Resources.Load("Prefabs/RespawnPS") as GameObject;
+
 		if(Dude.transform.localScale.x < 0)
-		Speed = -Speed;		
+			Speed = -Speed;
+
+		//Destroys Projectile after X seconds
+		Destroy(gameObject,TimeOut);	
 	}
 	
 	// Update is called once per frame
@@ -21,14 +31,21 @@ public class Projectile : MonoBehaviour {
 		GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, GetComponent<Rigidbody2D>().velocity.y);		
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
+	void onTriggerEnter2D(Collider2D other){
+		//Destroys enemy on contact with projectile. Adds points.
 		if(other.tag == "Enemy"){
-			Instantiate(EnemyDeath, other.transform.position, other.transform.rotation);
-			Destroy (other.gameObject);
-			ScoreManager.AddPoints (PointsForKill);
+				Instantiate(EnemyDeath, other.transform.position, other.transform.rotation);
+				Destroy (other.gameObject);
+				ScoreManager.AddPoints (PointsForKill);
 		}
 
-		Instantiate(ProjectileParticle, transform.position, transform.rotation);
-		Destroy (gameObject);
+		// Instantiate
+		Destroy(gameObject);
 	}
+
+		void OnCollisionEnter2D(Collision2D other)
+		{
+			Instantiate(ProjectileParticle, transform.position, transform.rotation);
+			Destroy (gameObject);	
+		}
 }

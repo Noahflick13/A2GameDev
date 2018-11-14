@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 	public GameObject CurrentCheckPoint;
 	public Rigidbody2D Dude;
+	public GameObject Dude2;
 	//particles
 	public GameObject DeathParticle;
 	public GameObject RespawnParticle;
@@ -20,7 +21,8 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//Dude = FindObjectOfType<Rigidbody2D> ();
+		Dude = GameObject.Find("Dude").GetComponent<Rigidbody2D>();
+		Dude2 = GameObject.Find("Dude");
 	}
 	public void RespawnPlayer(){
 		StartCoroutine ("RespawnPlayerCo");
@@ -30,6 +32,7 @@ public class LevelManager : MonoBehaviour {
 		Instantiate (DeathParticle, Dude.transform.position, Dude.transform.rotation);
 		//Hide Dude
 		// PC.enabled = False;
+		Dude2.SetActive(false);
 		Dude.GetComponent<Renderer> ().enabled = false;
 		//Gravity Reset
 		GravityStore = Dude.GetComponent<Rigidbody2D>().gravityScale;
@@ -47,6 +50,7 @@ public class LevelManager : MonoBehaviour {
 		Dude.transform.position = CurrentCheckPoint.transform.position;
 		//Show dude
 		//dude.enabled = true;
+		Dude2.SetActive(true);
 		Dude.GetComponent<Renderer> ().enabled = true;
 		//Spawn Dude
 		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
