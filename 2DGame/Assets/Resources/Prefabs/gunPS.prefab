@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4153933556772688}
   - component: {fileID: 198695808388866014}
   - component: {fileID: 199803385482420698}
+  - component: {fileID: 114895881061526806}
   m_Layer: 0
   m_Name: gunPS
   m_TagString: Untagged
@@ -41,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &114895881061526806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1160130168621198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864924ba365b049f694094a1bf65c2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198695808388866014
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -48,8 +60,8 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160130168621198}
   serializedVersion: 5
-  lengthInSec: 1.09
-  simulationSpeed: 0.73
+  lengthInSec: 0.64
+  simulationSpeed: 0.85
   stopAction: 0
   looping: 0
   prewarm: 0
@@ -120,7 +132,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.89
+      scalar: 0.71
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -289,7 +301,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.14
+      scalar: 0.77
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -611,7 +623,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.29
+      scalar: 0.22
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -665,7 +677,7 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 4
-    angle: 25
+    angle: 9.4
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -693,7 +705,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 2.77
+      value: 1.7
       mode: 0
       spread: 0
       speed:

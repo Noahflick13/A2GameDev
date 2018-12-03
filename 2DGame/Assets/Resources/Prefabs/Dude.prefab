@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 4355429486316822}
-  Projectile: {fileID: 0}
+  Projectile: {fileID: 1829272333789532, guid: 2ba8a2354dae2419fa6d08c1d4dd2351, type: 2}
 --- !u!212 &212296058963227716
 SpriteRenderer:
   m_ObjectHideFlags: 1

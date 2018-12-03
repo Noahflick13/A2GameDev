@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
@@ -17,7 +16,7 @@ public class Projectile : MonoBehaviour {
 
 		EnemyDeath = Resources.Load("Prefabs/DeathPS") as GameObject;
 
-		ProjectileParticle = Resources.Load("Prefabs/RespawnPS") as GameObject;
+		ProjectileParticle = Resources.Load("Prefabs/gunPS") as GameObject;
 
 		if(Dude.transform.localScale.x < 0)
 			Speed = -Speed;
