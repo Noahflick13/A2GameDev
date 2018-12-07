@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour {
 		GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, GetComponent<Rigidbody2D>().velocity.y);		
 	}
 
-	void onTriggerEnter2D(Collider2D other){
+	void OnTriggerEnter2D(Collider2D other){
 		//Destroys enemy on contact with projectile. Adds points.
 		if(other.tag == "Enemy"){
 				Instantiate(EnemyDeath, other.transform.position, other.transform.rotation);
@@ -39,7 +39,7 @@ public class Projectile : MonoBehaviour {
 		}
 
 		// Instantiate
-		Destroy(gameObject);
+		Destroy (gameObject);
 	}
 
 		void OnCollisionEnter2D(Collision2D other)
