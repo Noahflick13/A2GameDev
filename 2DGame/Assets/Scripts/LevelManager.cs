@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject CurrentCheckPoint;
 	public Rigidbody2D Dude;
 	public GameObject Dude2;
+	public Animator animator;
 	//particles
 	public GameObject DeathParticle;
 	public GameObject RespawnParticle;
@@ -23,6 +24,7 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
 		Dude = GameObject.Find("Dude").GetComponent<Rigidbody2D>();
 		Dude2 = GameObject.Find("Dude");
+		animator.SetBool("isDead",false);
 	}
 	public void RespawnPlayer(){
 		StartCoroutine ("RespawnPlayerCo");
@@ -31,8 +33,9 @@ public class LevelManager : MonoBehaviour {
 		//Generate Death Particle
 		Instantiate (DeathParticle, Dude.transform.position, Dude.transform.rotation);
 		//Hide Dude
-		// PC.enabled = False;
+		//PC.enabled = False;
 		Dude2.SetActive(false);
+		animator.SetBool("isDead",true);
 		Dude.GetComponent<Renderer> ().enabled = false;
 		//Gravity Reset
 		GravityStore = Dude.GetComponent<Rigidbody2D>().gravityScale;
@@ -49,11 +52,12 @@ public class LevelManager : MonoBehaviour {
 		//Match Dudes transform position
 		Dude.transform.position = CurrentCheckPoint.transform.position;
 		//Show dude
-		//dude.enabled = true;
+		//Dude.enabled = true;
 		Dude2.SetActive(true);
-		Dude.GetComponent<Renderer> ().enabled = true;
+		//Dude.GetComponent<Renderer> ().enabled = true;
 		//Spawn Dude
 		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
+		animator.SetBool("isDead",false);
 	}
 	
 	// Update is called once per frame

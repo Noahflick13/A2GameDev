@@ -24,6 +24,7 @@ public class CharacterMove : MonoBehaviour {
 	void Start () {
 		animator.SetBool("isWalking",false);
 		animator.SetBool("isJumping",false);
+		
 	
 		
 	}

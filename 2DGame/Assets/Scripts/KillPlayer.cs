@@ -15,5 +15,6 @@ public class KillPlayer : MonoBehaviour {
 		if(other.name == "Dude") {
 			LevelManager.RespawnPlayer();
 		}
+		
 	}
 }
